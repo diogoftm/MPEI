@@ -3,13 +3,13 @@ function J = distanciaJaccardMinHash(Set,k)
     J=zeros(Nu,Nu); % array para guardar distancias
     sig = zeros(k,Nu);
     p = 100001029;
-    a = randi([1,p-1],1,k);
-    b = randi([1,p-1],1,k);
+    a = randi([])
     for n=1 : Nu
         for i=1 : k
             h = zeros(1,length(Set(n)));
             for it = 1 : length(Set{n})
-                h(1,it) = rem(a(i)*Set{n}(it,1)+b(i),p);
+                %h(1,it) = DJB31MA(Set{n}(it,1)*i, rem(51*i+32,10000*18));
+                h(1,it) = rem(i*Set{n}(it,1)+5000,7919);
             end
             sig(i,n) = min(h); %min
         end 
